@@ -4,13 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Random Acts Generator</title>
+  <title>Random Acts of Kindness Generator</title>
 </head>
 <body>
-  <div id="app"></div>
-  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
-  <script type="text/babel" src="app.js"></script>
+  <div class="container">
+    <h1>Random Acts of Kindness Generator</h1>
+    <button class="generate-btn" onclick="generateRandomAct()">Generate Random Act</button>
+    <p id="random-act"></p>
+  </div>
+
+  <script>
+    const ActsOfKindness = [
+      "Compliment a stranger and brighten their day.",
+      "Buy a coffee for the person behind you in line.",
+      "Plant a tree in your neighborhood.",
+      "Send a handwritten note of appreciation to someone you admire.",
+      "Volunteer your time at a local charity or community event.",
+      "Hold the door open for someone and greet them with a smile.",
+      "Offer to help a neighbor with a task or errand.",
+      "Leave an uplifting note in a public place for someone to find.",
+      "Donate gently used clothes or household items to a local shelter.",
+      "Bake cookies or treats and share them with your coworkers or neighbors."
+      // Add more acts of kindness as needed
+    ];
+
+    function generateRandomAct() {
+      const randomIndex = Math.floor(Math.random() * ActsOfKindness.length);
+      const randomAct = ActsOfKindness[randomIndex];
+      document.getElementById("random-act").innerText = randomAct;
+    }
+
+    // Run the function on page load to display an initial act
+    generateRandomAct();
+  </script>
 </body>
 </html>
